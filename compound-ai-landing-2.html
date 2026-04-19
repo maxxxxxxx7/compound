@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compound AI – Automation that compounds for SMBs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --bg-deep: #ebe6db;
+    --ink: #1a1a1a;
+    --ink-soft: #3d3d3d;
+    --rule: #1a1a1a;
+    --rule-soft: rgba(26, 26, 26, 0.15);
+    --accent: #b8431a;
+    --accent-deep: #8a3214;
+    --paper: #fbf9f4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: 'Fraunces', serif; font-optical-sizing: auto; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1000;
+    mix-blend-mode: multiply;
+  }
+
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+
+  /* ============ HEADER ============ */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .logo-mark {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+  }
+  nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    font-size: 14px;
+  }
+  nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 400;
+  }
+  nav a:hover { color: var(--accent); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 18px;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--accent); color: var(--paper); }
+
+  /* ============ MASTHEAD ============ */
+  .masthead {
+    border-bottom: 1px solid var(--rule);
+    padding: 12px 0;
+    background: var(--bg);
+  }
+  .masthead-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .masthead-meta { display: flex; gap: 32px; }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 80px 0 100px;
+    border-bottom: 2px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+  }
+  .eyebrow {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 32px;
+    height: 1px;
+    background: var(--ink);
+  }
+  h1.hero-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(56px, 7vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    margin-bottom: 32px;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--accent);
+  }
+  .hero-sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 28px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s;
+  }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-primary svg { transition: transform 0.2s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-secondary {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15px;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+
+  /* Hero image – replaces the ticker panel */
+  .hero-image {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.15) contrast(1.05);
+    display: block;
+  }
+  .hero-image-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    background: var(--paper);
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .caption-label {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  .live {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .live::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* ============ STAT STRIP ============ */
+  .stat-strip {
+    border-bottom: 1px solid var(--rule);
+    padding: 48px 0;
+    background: var(--bg-deep);
+  }
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .stat {
+    padding: 0 32px;
+    border-right: 1px solid var(--rule-soft);
+  }
+  .stat:first-child { padding-left: 0; }
+  .stat:last-child { border-right: none; padding-right: 0; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    margin-bottom: 12px;
+  }
+  .stat-num em { color: var(--accent); font-style: normal; }
+  .stat-label {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--ink-soft);
+  }
+
+  /* ============ SECTION HEADERS ============ */
+  .section { padding: 120px 0; border-bottom: 1px solid var(--rule); }
+  .section-head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 80px;
+    align-items: end;
+  }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .section-kicker {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+  h2 em { color: var(--accent); font-style: italic; font-weight: 300; }
+
+  /* ============ THESIS ============ */
+  .thesis-body {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    max-width: 880px;
+  }
+  .thesis-body p { margin-bottom: 32px; }
+  .thesis-body strong { font-weight: 500; color: var(--ink); }
+  .pullquote {
+    border-left: 3px solid var(--accent);
+    padding-left: 24px;
+    margin: 48px 0;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* Savings block – the headline ROI moment */
+  .savings-block {
+    margin-top: 96px;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 96px 80px;
+    border-left: 6px solid var(--accent);
+    position: relative;
+    overflow: hidden;
+  }
+  .savings-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse at top right, rgba(184, 67, 26, 0.18), transparent 60%);
+    pointer-events: none;
+  }
+  .savings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  .savings-range {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-family: 'Fraunces', serif;
+    line-height: 0.85;
+  }
+  .savings-low, .savings-high {
+    display: flex;
+    align-items: baseline;
+  }
+  .savings-currency {
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--accent);
+    margin-right: 4px;
+  }
+  .savings-num {
+    font-size: clamp(80px, 11vw, 144px);
+    font-weight: 400;
+    letter-spacing: -0.04em;
+    color: var(--paper);
+  }
+  .savings-high .savings-num {
+    color: var(--accent);
+  }
+  .savings-divider {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 28px;
+    color: rgba(251, 249, 244, 0.5);
+    margin: 0 8px;
+  }
+  .savings-copy {
+    border-left: 1px solid rgba(251, 249, 244, 0.2);
+    padding-left: 48px;
+  }
+  .savings-headline {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 32px;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    margin-bottom: 24px;
+    color: var(--paper);
+  }
+  .savings-headline em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+  }
+  .savings-sub {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 17px;
+    line-height: 1.5;
+    color: rgba(251, 249, 244, 0.7);
+    margin: 0;
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .step {
+    border-right: 1px solid var(--rule);
+    padding: 48px 32px;
+    position: relative;
+  }
+  .step:last-child { border-right: none; }
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .step-num::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule-soft);
+  }
+  .step h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .step p {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .step-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule-soft);
+  }
+
+  /* ============ WORK / CASE STUDIES ============ */
+  .case {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    padding: 64px 0;
+    border-top: 1px solid var(--rule-soft);
+    align-items: start;
+  }
+  .case:first-of-type { border-top: 1px solid var(--rule); }
+  .case-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .case-meta div { margin-bottom: 8px; }
+  .case-meta strong { color: var(--ink); font-weight: 500; }
+  .case-image {
+    margin-top: 24px;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border: 1px solid var(--rule-soft);
+  }
+  .case-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0.2) contrast(1.05);
+    display: block;
+  }
+  .case h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+  .case-body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+  .case-result {
+    display: flex;
+    gap: 48px;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .case-result-item .num {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .case-result-item .lbl {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+
+  /* ============ FOUNDERS ============ */
+  .founders {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+  .founder {
+    border: 1px solid var(--rule);
+    padding: 40px;
+    background: var(--paper);
+    position: relative;
+  }
+  .founder-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+  .founder-portrait {
+    margin: -40px -40px 32px;
+    aspect-ratio: 5/3;
+    overflow: hidden;
+    border-bottom: 1px solid var(--rule);
+  }
+  .portrait-placeholder {
+    width: 100%;
+    height: 100%;
+    background:
+      linear-gradient(135deg, var(--bg-deep) 0%, var(--bg) 100%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='p' width='4' height='4' patternUnits='userSpaceOnUse' patternTransform='rotate(45)'%3E%3Cline x1='0' y1='0' x2='0' y2='4' stroke='%231a1a1a' stroke-width='0.5' opacity='0.1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23p)'/%3E%3C/svg%3E");
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+  }
+  .portrait-initial {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .portrait-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+  }
+  .founder h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+  .founder-role {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 32px;
+  }
+  .founder-bio {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+  .founder-cv {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--ink);
+    border-top: 1px solid var(--rule-soft);
+    padding-top: 20px;
+  }
+  .founder-cv div {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+  }
+  .founder-cv span:first-child { color: var(--ink-soft); }
+
+  /* ============ RISKS ============ */
+  .risks {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .risks .section-head h2 { color: var(--paper); }
+  .risks .section-num, .risks .section-kicker { color: rgba(251, 249, 244, 0.6); }
+  .risks .section-kicker { color: rgba(251, 249, 244, 0.7); }
+  .risks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid rgba(251, 249, 244, 0.2);
+  }
+  .risk {
+    padding: 48px;
+    border-bottom: 1px solid rgba(251, 249, 244, 0.15);
+    border-right: 1px solid rgba(251, 249, 244, 0.15);
+  }
+  .risk:nth-child(2n) { border-right: none; }
+  .risk:nth-last-child(-n+1) { border-bottom: none; }
+  .risk:nth-child(5) {
+    grid-column: 1 / -1;
+    border-right: none;
+    border-bottom: none;
+  }
+  .risk-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .risk-num {
+    font-family: 'Fraunces', serif;
+    font-size: 36px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .risk-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(251, 249, 244, 0.6);
+  }
+  .risk h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+  }
+  .risk p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(251, 249, 244, 0.8);
+  }
+
+  /* ============ FAQ ============ */
+  .faq-list {
+    border-top: 1px solid var(--rule);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--rule);
+    padding: 32px 0;
+    cursor: pointer;
+  }
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 32px;
+  }
+  .faq-q h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    flex: 1;
+  }
+  .faq-toggle {
+    font-family: 'Fraunces', serif;
+    font-size: 32px;
+    color: var(--accent);
+    transition: transform 0.3s;
+  }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin-top 0.4s ease;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 760px;
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    margin-top: 20px;
+  }
+
+  /* ============ CTA ============ */
+  .cta {
+    padding: 160px 0;
+    text-align: center;
+    background: var(--bg-deep);
+    border-bottom: 1px solid var(--rule);
+  }
+  .cta h2 {
+    max-width: 900px;
+    margin: 0 auto 32px;
+  }
+  .cta-sub {
+    font-size: 19px;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 0 auto 48px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 64px 0 32px;
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(251, 249, 244, 0.15);
+  }
+  footer h4 {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(251, 249, 244, 0.5);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  footer ul { list-style: none; }
+  footer li { padding: 6px 0; font-size: 14px; }
+  footer a { color: var(--paper); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  .footer-tag {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 22px;
+    line-height: 1.4;
+    color: rgba(251, 249, 244, 0.8);
+    max-width: 320px;
+  }
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: rgba(251, 249, 244, 0.5);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .container { padding: 0 20px; }
+    nav a:not(.nav-cta) { display: none; }
+    .hero { padding: 48px 0 64px; }
+    .hero-grid, .section-head, .case, .founders, .offer-grid, .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .stat-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .stat { border-right: none; padding: 0; }
+    .stat:nth-child(odd) { border-right: 1px solid var(--rule-soft); padding-right: 24px; }
+    .stat:nth-child(even) { padding-left: 24px; }
+    .steps { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: 1px solid var(--rule); }
+    .section { padding: 64px 0; }
+    .case-result { gap: 32px; flex-wrap: wrap; }
+    .masthead-meta { display: none; }
+    .savings-block { padding: 56px 28px; margin-top: 56px; }
+    .savings-grid { grid-template-columns: 1fr; gap: 40px; }
+    .savings-copy { border-left: none; padding-left: 0; border-top: 1px solid rgba(251, 249, 244, 0.2); padding-top: 32px; }
+    .savings-headline { font-size: 24px; }
+    .savings-currency { font-size: 32px; }
+    .savings-divider { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo"><span class="logo-mark"></span> Compound AI</div>
+    <nav>
+      <a href="#thesis">Thesis</a>
+      <a href="#how">How it works</a>
+      <a href="#work">Work</a>
+      <a href="#contact" class="nav-cta">Book a call →</a>
+    </nav>
+  </div>
+</header>
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">ROI positive AI systems in under 30 days</div>
+        <h1 class="hero-title">Automation that <em>compounds.</em></h1>
+        <p class="hero-sub">We embed with established small &amp; mid-sized businesses, find the manual work silently taxing your margin, and ship the AI system that replaces it. Live in 30 days.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary">
+            Book a discovery call
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5"/></svg>
+          </a>
+          <a href="#thesis" class="btn-secondary">See how it works</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80" alt="Operator at work in a small business" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<section class="stat-strip">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num"><em>62%</em></div>
+        <div class="stat-label">of SMB knowledge work is manual, repetitive, and now automatable.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">30<em>d</em></div>
+        <div class="stat-label">from kickoff to a working system in production.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">2<em>×</em></div>
+        <div class="stat-label">clients at a time. We embed deep, then leave you running.</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">$<em>0</em></div>
+        <div class="stat-label">to scope. Discovery calls and audits are free.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THESIS -->
+<section class="section" id="thesis">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-num">§ 01 – The Thesis</div>
+        <div class="section-kicker">Why now, why this</div>
+        <h2>The next decade of <em>SMB margin</em> is hiding in your back office.</h2>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="thesis-body">
+      <p>Every established business is sitting on twenty years of accumulated process – checklists, spreadsheets, follow-up sequences, judgment calls – that runs the company quietly in the background. Most of it was built when AI couldn't touch it.</p>
+      <p>It can now.</p>
+      <div class="pullquote">
+        The opportunity isn't replacing your team. It's giving them back the twenty hours a week they spend doing what a system should be doing.
+      </div>
+    </div>
+
+    <div class="savings-block">
+      <div class="savings-grid">
+        <div class="savings-range">
+          <div class="savings-low">
+            <span class="savings-currency">$</span><span class="savings-num">15k</span>
+          </div>
+          <div class="savings-divider">to</div>
+          <div class="savings-high">
+            <span class="savings-currency">$</span><span class="savings-num">80k</span>
+          </div>
+        </div>
+        <div class="savings-copy">
+          <p class="savings-headline">A typical owner saves <em>$15,000 to $80,000 a year</em> from a single workflow we build.</p>
+          <p class="savings-sub">Most engagements pay for themselves in the first 90 days.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-num">§ 02 – Method</div>
+        <div class="section-kicker">A three-step engagement</div>
+        <h2>Find the pain. Build the fix. <em>Hand it over.</em></h2>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">Step 01</div>
+        <h3>Map the workflow.</h3>
+        <p>Two weeks on-site or remote, shadowing your operation. We surface every place a person is doing what a system could. Output: a ranked list of opportunities by hours saved and complexity to deploy.</p>
+        <div class="step-time">Weeks 1 – 2</div>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 02</div>
+        <h3>Build the system.</h3>
+        <p>We pick the workflow with the highest payback and build it. Real software, integrated into your tools. Not a demo. Not a slide deck. A system your team uses on day one.</p>
+        <div class="step-time">Weeks 3 – 8</div>
+      </div>
+      <div class="step">
+        <div class="step-num">Step 03</div>
+        <h3>Train and exit.</h3>
+        <p>Your team learns to operate, monitor, and extend the system. We document, hand over the keys, and stay on retainer only if you want us to. Most clients don't need us after the engagement closes.</p>
+        <div class="step-time">Weeks 9 – 12</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-num">§ 03 – Selected Work</div>
+        <div class="section-kicker">Recent engagements</div>
+        <h2>What it looks like <em>in the wild.</em></h2>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="case">
+      <div class="case-meta">
+        <div><strong>Sector</strong><br>Sports &amp; Recreation</div>
+        <div><strong>Engagement</strong><br>Voice AI booking system</div>
+        <div><strong>Stack</strong><br>Twilio · Deepgram · OpenAI</div>
+        <div><strong>Status</strong><br>Live in production</div>
+        <div class="case-image">
+          <img src="https://images.unsplash.com/photo-1516731415730-0c607149933a?w=600&q=80" alt="Baseball facility" />
+        </div>
+      </div>
+      <div>
+        <h3>A baseball facility took 40% of its bookings on the phone. We built the operator that answers it.</h3>
+        <p class="case-body">Upper Deck Baseball was losing bookings to voicemail every evening. We deployed a voice AI agent on their main line that handles availability checks, books cages, takes payment, and routes anything complex to the owner. Deployed in six weeks on their existing phone number.</p>
+        <div class="case-result">
+          <div class="case-result-item">
+            <div class="num">24/7</div>
+            <div class="lbl">Booking availability</div>
+          </div>
+          <div class="case-result-item">
+            <div class="num">~30s</div>
+            <div class="lbl">Average call resolution</div>
+          </div>
+          <div class="case-result-item">
+            <div class="num">0</div>
+            <div class="lbl">Voicemails missed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case">
+      <div class="case-meta">
+        <div><strong>Sector</strong><br>Healthcare SaaS</div>
+        <div><strong>Engagement</strong><br>Voice AI for clinical workflows</div>
+        <div><strong>Stack</strong><br>Custom integrations</div>
+        <div><strong>Status</strong><br>Scaled to $2.5M+ ARR</div>
+        <div class="case-image">
+          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Healthcare clinical setting" />
+        </div>
+      </div>
+      <div>
+        <h3>Took a healthcare voice AI vertical from idea to $2.5M+ in ARR.</h3>
+        <p class="case-body">Built and led the voice AI product line at FlipCX for the healthcare market, taking it from zero to $2.5M+ in ARR while managing a team of six and a portfolio of clinical clients.</p>
+        <div class="case-result">
+          <div class="case-result-item">
+            <div class="num">0 → $2.5M+</div>
+            <div class="lbl">ARR built from scratch</div>
+          </div>
+          <div class="case-result-item">
+            <div class="num">6</div>
+            <div class="lbl">Team led</div>
+          </div>
+          <div class="case-result-item">
+            <div class="num">Multi-client</div>
+            <div class="lbl">Portfolio managed</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-num">§ 04 – Principals</div>
+        <div class="section-kicker">Who you'll work with</div>
+        <h2>Two operators. <em>No account managers.</em></h2>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="founders">
+      <div class="founder">
+        <div class="founder-portrait">
+          <div class="portrait-placeholder">
+            <span class="portrait-initial">M</span>
+            <span class="portrait-note">Add portrait →</span>
+          </div>
+        </div>
+        <div class="founder-label">Co-founder · Product &amp; Strategy</div>
+        <h3>Max Graham</h3>
+        <p class="founder-bio">Built and shipped AI products at scale – most recently leading a voice AI vertical from zero to material ARR at FlipCX. Prior product work includes a gaming app with millions of downloads. Specializes in finding the wedge: the one workflow where AI changes the unit economics.</p>
+        <div class="founder-cv">
+          <div><span>Most recent</span><span>Automating Urgent Care workflows</span></div>
+          <div><span>Based in</span><span>New York City</span></div>
+          <div><span>Profile</span><span><a href="https://www.linkedin.com/in/max-graham-4b35b8171/" style="color:var(--accent);">LinkedIn ↗</a></span></div>
+        </div>
+      </div>
+
+      <div class="founder">
+        <div class="founder-portrait">
+          <div class="portrait-placeholder">
+            <span class="portrait-initial">M</span>
+            <span class="portrait-note">Add portrait →</span>
+          </div>
+        </div>
+        <div class="founder-label">Co-founder · Engineering &amp; Delivery</div>
+        <h3>Matt Hrynkow</h3>
+        <p class="founder-bio">Six years building and shipping technical products to Fortune 100 customers. Most recently at Pointr, owning 0&nbsp;→&nbsp;1 discovery and delivery of AI-enabled smart building products across workplace and healthcare verticals. Previously led deployment and customer success for a $10M ARR portfolio, and personally generated $1.14M ARR by turning enterprise pilots into paid contracts. The translator between what operators actually need and what gets built.</p>
+        <div class="founder-cv">
+          <div><span>Most recent</span><span>Shipping AI products in smart buildings</span></div>
+          <div><span>Based in</span><span>New York City</span></div>
+          <div><span>Profile</span><span><a href="https://www.linkedin.com/in/matt-hrynkow/" style="color:var(--accent);">LinkedIn ↗</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="section-num">§ 05 – Common Questions</div>
+        <div class="section-kicker">Before you book</div>
+        <h2>The things owners <em>actually ask.</em></h2>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q"><h3>We're not technical. Is this for us?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p style="padding-top:8px;">Yes – explicitly. Our methodology is built for owners who run real businesses and don't have time to learn the difference between an LLM and an API. We translate. You make decisions. We build.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>How is this different from hiring an agency or a consultant?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p style="padding-top:8px;">Agencies optimize for billable hours; consultants for slide decks. We optimize for one thing: a working system in production inside 30 days. We take two clients at a time precisely because we won't dilute attention.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>What happens if the system breaks after you leave?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p style="padding-top:8px;">Every engagement includes thirty days of post-launch support and full documentation. Most systems we build are stable enough that clients don't need ongoing retainers. If you do, we offer one – but we won't push it.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>How do you decide which workflow to automate first?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p style="padding-top:8px;">Hours saved per week × deploy complexity × business sensitivity. We pick the highest-impact, lowest-risk wedge first – typically something that pays back inside 60 days of going live.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q"><h3>Do you sign NDAs?</h3><span class="faq-toggle">+</span></div>
+        <div class="faq-a"><p style="padding-top:8px;">Yes. Always.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="container">
+    <div class="section-num">§ 06 – Next Step</div>
+    <h2>30 minutes. <em>One workflow.</em> A real number on what it'd save you.</h2>
+    <p class="cta-sub">Free discovery call. No deck, no pitch. Tell us the workflow that drives you the most insane and we'll tell you, honestly, what it'd take to fix it and what you'd get back.</p>
+    <a href="#" class="btn-primary">
+      Book a discovery call
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M13 7L7 1M13 7L7 13" stroke="currentColor" stroke-width="1.5"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:var(--paper); margin-bottom: 24px;">
+          <span class="logo-mark"></span> Compound AI
+        </div>
+        <p class="footer-tag">AI systems that turn manual work into margin, ROI positive in 90 days.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#thesis">Thesis</a></li>
+          <li><a href="#how">Method</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#offer">Engage</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Principals</h4>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/max-graham-4b35b8171/">Max Graham</a></li>
+          <li><a href="https://www.linkedin.com/in/matt-hrynkow/">Matt Hrynkow</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:hello@compound.ai">hello@compound.ai</a></li>
+          <li><a href="#contact">Book a call</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Compound AI · All rights reserved</span>
+      <span>Brooklyn / Toronto</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('open');
+    });
+  });
+</script>
+
+</body>
+</html>
