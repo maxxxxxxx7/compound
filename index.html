@@ -592,6 +592,14 @@
     overflow: hidden;
     border-bottom: 1px solid var(--rule);
   }
+  .founder-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(0.15) contrast(1.05);
+    display: block;
+  }
   .portrait-placeholder {
     width: 100%;
     height: 100%;
@@ -1096,10 +1104,7 @@
 
       <div class="founder">
         <div class="founder-portrait">
-          <div class="portrait-placeholder">
-            <span class="portrait-initial">M</span>
-            <span class="portrait-note">Add portrait →</span>
-          </div>
+          <img src="/matt.jpg" alt="Matt Hrynkow" />
         </div>
         <div class="founder-label">Co-founder · Engineering &amp; Delivery</div>
         <h3>Matt Hrynkow</h3>
