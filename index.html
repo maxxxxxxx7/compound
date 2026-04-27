@@ -1,13 +1,12 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"> 
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compound AI – Automation that compounds for SMBs</title>
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='6' fill='%23f4f1ea'/%3E%3Cg transform='translate(4, 4) scale(0.95)'%3E%3Cpath d='M17.264 38.728C12.7573 38.728 9.18667 37.48 6.552 34.984C3.91733 32.4533 2.6 28.848 2.6 24.168V15.432C2.6 10.752 3.91733 7.164 6.552 4.668C9.18667 2.1373 12.7573 0.872 17.264 0.872C21.736 0.872 25.1853 2.1027 27.612 4.564C30.0733 6.9907 31.304 10.336 31.304 14.6V14.912H24.544V14.392C24.544 12.2427 23.9373 10.4747 22.724 9.088C21.5453 7.7013 19.7253 7.008 17.264 7.008C14.8373 7.008 12.9307 7.7533 11.544 9.244C10.1573 10.7347 9.464 12.7627 9.464 15.328V24.272C9.464 26.8027 10.1573 28.8307 11.544 30.356C12.9307 31.8467 14.8373 32.592 17.264 32.592C19.7253 32.592 21.5453 31.8987 22.724 30.512C23.9373 29.0907 24.544 27.3227 24.544 25.208V24.272H31.304V25C31.304 29.264 30.0733 32.6267 27.612 35.088C25.1853 37.5147 21.736 38.728 17.264 38.728Z' fill='%231E1E1E'/%3E%3Crect x='3' y='32' width='28' height='6' fill='%23b8431a'/%3E%3C/g%3E%3C/svg%3E">
-<link rel="alternate icon" href="favicon.svg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +57,7 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
     opacity: 0.18;
     pointer-events: none;
-    z-index: 1000;
+    z-index: 1;
     mix-blend-mode: multiply;
   }
 
@@ -71,7 +70,12 @@
     position: sticky;
     top: 0;
     background: var(--bg);
-    z-index: 100;
+    z-index: 1100;
+    /* iOS Safari fix: ensure the sticky header creates its own stacking context
+       and fully occludes content scrolling underneath */
+    -webkit-backdrop-filter: blur(0);
+    backdrop-filter: blur(0);
+    isolation: isolate;
   }
   .header-inner {
     display: flex;
@@ -1097,7 +1101,7 @@
         </div>
         <div class="founder-label">Co-founder · Engineering &amp; Delivery</div>
         <h3>Matt Hrynkow</h3>
-        <p class="founder-bio">Six years shipping technical products to Fortune 100 customers. Most recently at Pointr, owning 0 → 1 delivery of AI-enabled smart building products. Previously led deployment for a $10M ARR portfolio and personally generated $1.14M ARR turning pilots into contracts. Translator between operator needs and what gets built.</p>
+        <p class="founder-bio">Six years building and shipping technical products to Fortune 100 customers. Most recently at Pointr, owning 0&nbsp;→&nbsp;1 discovery and delivery of AI-enabled smart building products across workplace and healthcare verticals. Previously led deployment and customer success for a $10M ARR portfolio, and personally generated $1.14M ARR by turning enterprise pilots into paid contracts. The translator between what operators actually need and what gets built.</p>
         <div class="founder-cv">
           <div><span>Most recent</span><span>Shipping AI products in smart buildings</span></div>
           <div><span>Based in</span><span>New York City</span></div>
