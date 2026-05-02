@@ -304,6 +304,16 @@
     line-height: 1.4;
     color: var(--ink-soft);
   }
+  .stat-cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(26, 26, 26, 0.5);
+    margin-top: 8px;
+  }
+  .stat-cite a { color: inherit; text-decoration: underline; text-decoration-color: rgba(26, 26, 26, 0.25); }
+  .stat-cite a:hover { text-decoration-color: var(--accent); color: var(--accent); }
 
   /* ============ SECTION HEADERS ============ */
   .section { padding: 120px 0; border-bottom: 1px solid var(--rule); }
@@ -403,7 +413,7 @@
     margin-right: 4px;
   }
   .savings-num {
-    font-size: clamp(80px, 11vw, 144px);
+    font-size: clamp(72px, 9.5vw, 124px);
     font-weight: 400;
     letter-spacing: -0.04em;
     color: var(--paper);
@@ -879,7 +889,7 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="eyebrow">ROI positive AI systems in under 30 days</div>
+        <div class="eyebrow">Live in production in 30 days</div>
         <h1 class="hero-title">Automation that <em>compounds.</em></h1>
         <p class="hero-sub">We embed with established small &amp; mid-sized businesses, find the manual work silently taxing your margin, and ship the AI system that replaces it. Live in 30 days.</p>
         <div class="hero-actions">
@@ -903,8 +913,9 @@
   <div class="container">
     <div class="stat-grid">
       <div class="stat">
-        <div class="stat-num"><em>62%</em></div>
-        <div class="stat-label">of SMB knowledge work is manual, repetitive, and now automatable.</div>
+        <div class="stat-num"><em>57%</em></div>
+        <div class="stat-label">of US work hours could be automated with technology that exists today.</div>
+        <div class="stat-cite"><a href="https://www.mckinsey.com/mgi/our-research/agents-robots-and-us-skill-partnerships-in-the-age-of-ai" target="_blank" rel="noopener">McKinsey Global Institute, Nov 2025</a></div>
       </div>
       <div class="stat">
         <div class="stat-num">30<em>DAYS</em></div>
@@ -945,17 +956,13 @@
     <div class="savings-block">
       <div class="savings-grid">
         <div class="savings-range">
-          <div class="savings-low">
-            <span class="savings-currency">$</span><span class="savings-num">15k</span>
-          </div>
-          <div class="savings-divider">to</div>
           <div class="savings-high">
-            <span class="savings-currency">$</span><span class="savings-num">80k</span>
+            <span class="savings-currency">$</span><span class="savings-num">2.5M+</span>
           </div>
         </div>
         <div class="savings-copy">
-          <p class="savings-headline">A typical owner saves <em>$15,000 to $80,000 a year</em> from a single workflow we build.</p>
-          <p class="savings-sub">Most engagements pay for themselves in the first 90 days.</p>
+          <p class="savings-headline">Most recent voice AI vertical &mdash; <em>FlipCX healthcare</em>. Built and led the product line, six-person team, multi-client portfolio.</p>
+          <p class="savings-sub">Sector: Healthcare SaaS &middot; Status: Scaled to $2.5M+ ARR.</p>
         </div>
       </div>
     </div>
@@ -1179,7 +1186,7 @@
             <rect x="220" y="95" width="31" height="8" fill="var(--accent)"/>
           </svg>
         </div>
-        <p class="footer-tag">AI systems that turn manual work into margin, ROI positive in 90 days.</p>
+        <p class="footer-tag">AI systems that turn manual work into margin. Live in 30 days.</p>
       </div>
       <div>
         <h4>Navigate</h4>
@@ -1202,12 +1209,14 @@
         <ul>
           <li><a href="mailto:hello@compounding-systems.com">hello@compounding-systems.com</a></li>
           <li><a data-cal-link="max-graham-xbrop7/30min" data-cal-namespace="30min" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Book a call</a></li>
+          <li><a href="/privacy.html">Privacy policy</a></li>
+          <li><a href="/terms.html">Terms of service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Compounding Systems · All rights reserved</span>
-      <span>Brooklyn</span>
+      <span>109 N. 12th Street, 9th Floor · Brooklyn, NY 11249</span>
     </div>
   </div>
 </footer>

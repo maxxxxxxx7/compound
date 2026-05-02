@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service · Compounding Systems</title>
+<meta name="description" content="The terms that govern your use of the Compounding Systems website.">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --bg-deep: #ebe6db;
+    --ink: #1a1a1a;
+    --ink-soft: #3d3d3d;
+    --rule: #1a1a1a;
+    --rule-soft: rgba(26, 26, 26, 0.15);
+    --accent: #b8431a;
+    --accent-deep: #8a3214;
+    --paper: #fbf9f4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .container { max-width: 880px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    isolation: isolate;
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo a {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .logo a em { font-style: italic; color: var(--accent); }
+  .nav-back {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+  }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+  .meta span + span::before { content: " · "; margin: 0 4px; opacity: 0.4; }
+
+  /* BODY */
+  .content {
+    padding: 64px 0 120px;
+  }
+  .lead {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 64px;
+    max-width: 720px;
+  }
+  .lead em { font-style: italic; color: var(--accent); }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-top: 56px;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  h2:first-of-type { margin-top: 0; }
+  h2 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+  h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 28px;
+    margin-bottom: 10px;
+    letter-spacing: -0.005em;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  ul {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  ul li {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule-soft); text-underline-offset: 3px; transition: color 0.15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  strong { font-weight: 500; color: var(--ink); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 56px 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--paper);
+  }
+  .footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(251, 249, 244, 0.6);
+    line-height: 1.7;
+    text-align: right;
+  }
+  .footer-meta a { color: rgba(251, 249, 244, 0.85); text-decoration: none; }
+  .footer-meta a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 24px; }
+    .page-header { padding: 64px 0 48px; }
+    .content { padding: 48px 0 80px; }
+    h2 { font-size: 24px; }
+    .lead { font-size: 19px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo"><a href="/">Compounding <em>Systems</em></a></div>
+    <a class="nav-back" href="/">← Back to home</a>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="eyebrow">§ Terms</div>
+    <h1>Terms of <em>service.</em></h1>
+    <div class="meta">
+      <span>Last updated: May 2, 2026</span>
+      <span>Effective date: May 2, 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+
+    <p class="lead">These terms govern your use of <em>compounding-systems.com</em>. They are not the terms of any client engagement we may enter into with you — those live in a separate signed agreement.</p>
+
+    <h2><span class="num">01</span>Who we are</h2>
+    <p>Compounding Systems is a small AI automation consultancy operated by Max Graham and Matt Hrynkow, based at 109 N. 12th Street, 9th Floor, Brooklyn, NY 11249. References to "we," "us," and "our" mean Compounding Systems. References to "you" and "your" mean any person who visits or uses this website.</p>
+
+    <h2><span class="num">02</span>Acceptance of these terms</h2>
+    <p>By accessing or using this website, you agree to be bound by these terms and our <a href="/privacy.html">privacy policy</a>. If you do not agree, please do not use the site. We may update these terms from time to time. The "Last updated" date at the top reflects the most recent revision.</p>
+
+    <h2><span class="num">03</span>What this website is and isn't</h2>
+    <p>This site exists to describe what we do, share examples of past work, and let you book a discovery call. The content on this site is for general informational purposes only.</p>
+
+    <h3>Not advice</h3>
+    <p>Nothing on this site constitutes legal, financial, tax, accounting, medical, or other professional advice. Case studies and engagement descriptions reflect specific past work; results vary by business and circumstance.</p>
+
+    <h3>Not an offer</h3>
+    <p>Information about our services on this site is not a binding offer to provide services. Any engagement we enter into with you will be governed by a separate signed agreement that sets out scope, fees, timelines, and other terms.</p>
+
+    <h2><span class="num">04</span>Acceptable use</h2>
+    <p>When you use this website, you agree not to:</p>
+    <ul>
+      <li>Use the site in any way that violates applicable law</li>
+      <li>Attempt to gain unauthorized access to any portion of the site, our systems, or related infrastructure</li>
+      <li>Interfere with or disrupt the site, including by sending automated traffic, denial-of-service attacks, or excessive scraping</li>
+      <li>Reverse engineer, decompile, or attempt to derive the source of any software the site uses</li>
+      <li>Use the site to transmit malware, spam, or other harmful content</li>
+      <li>Impersonate any person or entity, or misrepresent your affiliation with anyone</li>
+      <li>Collect or harvest any information about other users</li>
+    </ul>
+
+    <h2><span class="num">05</span>Intellectual property</h2>
+    <p>The content on this site — including text, graphics, logos, images, code, design, and the structure of the site itself — is owned by Compounding Systems or used with permission, and is protected by copyright, trademark, and other intellectual property laws.</p>
+    <p>You may view this site for personal, non-commercial purposes and quote from it briefly for journalistic, academic, or commentary purposes consistent with fair use. You may not copy, modify, distribute, sell, or otherwise commercially exploit any content from this site without our prior written permission.</p>
+    <p>"Compounding Systems" and our logo are trademarks of Compounding Systems. Other names mentioned on this site may be trademarks of their respective owners; their mention does not imply endorsement or affiliation unless explicitly stated.</p>
+
+    <h2><span class="num">06</span>Third-party content and links</h2>
+    <p>This site may contain links to third-party websites, services, or content (including the Cal.com booking widget and links to LinkedIn profiles). We do not control, endorse, or take responsibility for any third-party content, and your use of those services is governed by their own terms.</p>
+
+    <h2><span class="num">07</span>Disclaimers</h2>
+    <p>This site and all content on it are provided <strong>"as is"</strong> and <strong>"as available"</strong>, without warranties of any kind, whether express or implied. To the fullest extent permitted by law, we disclaim all warranties including merchantability, fitness for a particular purpose, accuracy, completeness, non-infringement, and uninterrupted availability.</p>
+    <p>We do not warrant that the site will be error-free, secure, or continuously available. Past results described in case studies do not guarantee future outcomes for any other engagement.</p>
+
+    <h2><span class="num">08</span>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Compounding Systems and its principals will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits, revenue, data, business, or goodwill, arising out of or in connection with your use of this website — whether based in contract, tort, strict liability, or any other legal theory, and whether or not we have been advised of the possibility of such damages.</p>
+    <p>Where liability cannot be excluded, our total aggregate liability arising out of or relating to your use of this website is limited to one hundred US dollars (US $100).</p>
+
+    <h2><span class="num">09</span>Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless Compounding Systems and its principals from any claims, damages, liabilities, costs, and expenses (including reasonable legal fees) arising out of or related to your violation of these terms or your misuse of the site.</p>
+
+    <h2><span class="num">10</span>Governing law and disputes</h2>
+    <p>These terms are governed by the laws of the State of New York, without regard to its conflict of law principles. Any dispute arising from or relating to these terms or your use of this site will be brought in the state or federal courts located in Brooklyn or Manhattan, New York, and you consent to the personal jurisdiction of those courts.</p>
+
+    <h2><span class="num">11</span>Changes to these terms</h2>
+    <p>We may revise these terms at any time. The current version is always available at this URL, with the "Last updated" date at the top. Your continued use of the site after changes are posted constitutes acceptance of the revised terms.</p>
+
+    <h2><span class="num">12</span>Severability</h2>
+    <p>If any provision of these terms is found to be unenforceable, the remaining provisions will continue in full force. No waiver of any term will be deemed a continuing waiver.</p>
+
+    <h2><span class="num">13</span>Contact</h2>
+    <p>Questions about these terms: <a href="mailto:hello@compounding-systems.com">hello@compounding-systems.com</a>.</p>
+    <p>Compounding Systems<br>
+    109 N. 12th Street, 9th Floor<br>
+    Brooklyn, NY 11249</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Compounding <em>Systems</em></div>
+    <div class="footer-meta">
+      <div>© 2026 Compounding Systems · All rights reserved</div>
+      <div>109 N. 12th Street, 9th Floor · Brooklyn, NY 11249</div>
+      <div><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

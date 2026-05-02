@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · Compounding Systems</title>
+<meta name="description" content="How Compounding Systems collects, uses, and protects information you share through our website.">
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=JetBrains+Mono:wght@400;500&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f4f1ea;
+    --bg-deep: #ebe6db;
+    --ink: #1a1a1a;
+    --ink-soft: #3d3d3d;
+    --rule: #1a1a1a;
+    --rule-soft: rgba(26, 26, 26, 0.15);
+    --accent: #b8431a;
+    --accent-deep: #8a3214;
+    --paper: #fbf9f4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .container { max-width: 880px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 2; }
+
+  /* HEADER */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 18px 0;
+    background: var(--bg);
+    position: sticky;
+    top: 0;
+    z-index: 1100;
+    isolation: isolate;
+  }
+  .header-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo a {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+  .logo a em { font-style: italic; color: var(--accent); }
+  .nav-back {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .nav-back:hover { color: var(--accent); }
+
+  /* PAGE HEADER */
+  .page-header {
+    padding: 96px 0 64px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 6vw, 72px);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-bottom: 32px;
+  }
+  h1 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+  }
+  .meta span + span::before { content: " · "; margin: 0 4px; opacity: 0.4; }
+
+  /* BODY */
+  .content {
+    padding: 64px 0 120px;
+  }
+  .lead {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 64px;
+    max-width: 720px;
+  }
+  .lead em { font-style: italic; color: var(--accent); }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin-top: 56px;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  h2:first-of-type { margin-top: 0; }
+  h2 .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-right: 14px;
+    vertical-align: middle;
+  }
+  h3 {
+    font-family: 'Inter Tight', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-top: 28px;
+    margin-bottom: 10px;
+    letter-spacing: -0.005em;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  ul {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+  ul li {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    padding-left: 24px;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+  }
+  a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--rule-soft); text-underline-offset: 3px; transition: color 0.15s; }
+  a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+  strong { font-weight: 500; color: var(--ink); }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 56px 0 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .footer-brand {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-style: italic;
+    color: var(--paper);
+  }
+  .footer-meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    color: rgba(251, 249, 244, 0.6);
+    line-height: 1.7;
+    text-align: right;
+  }
+  .footer-meta a { color: rgba(251, 249, 244, 0.85); text-decoration: none; }
+  .footer-meta a:hover { color: var(--accent); }
+
+  @media (max-width: 720px) {
+    .container { padding: 0 24px; }
+    .page-header { padding: 64px 0 48px; }
+    .content { padding: 48px 0 80px; }
+    h2 { font-size: 24px; }
+    .lead { font-size: 19px; }
+    .footer-inner { flex-direction: column; align-items: flex-start; }
+    .footer-meta { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo"><a href="/">Compounding <em>Systems</em></a></div>
+    <a class="nav-back" href="/">← Back to home</a>
+  </div>
+</header>
+
+<section class="page-header">
+  <div class="container">
+    <div class="eyebrow">§ Privacy</div>
+    <h1>Privacy <em>policy.</em></h1>
+    <div class="meta">
+      <span>Last updated: May 2, 2026</span>
+      <span>Effective date: May 2, 2026</span>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="container">
+
+    <p class="lead">We collect the minimum information needed to talk with you about your business and ship the work. We do not sell your data, and we do not share it with anyone outside the small set of tools we use to run our practice.</p>
+
+    <h2><span class="num">01</span>Who we are</h2>
+    <p>Compounding Systems is a two-person AI automation consultancy operated by Max Graham and Matt Hrynkow. Our office is at 109 N. 12th Street, 9th Floor, Brooklyn, NY 11249. You can reach us at <a href="mailto:hello@compounding-systems.com">hello@compounding-systems.com</a>.</p>
+    <p>This policy explains what happens when you visit <strong>compounding-systems.com</strong>, book a discovery call with us, or otherwise share information with us through this site. It applies to the website only — separate engagement agreements govern how we handle information once we begin client work.</p>
+
+    <h2><span class="num">02</span>What we collect</h2>
+
+    <h3>Information you give us directly</h3>
+    <p>When you book a discovery call through our embedded Cal.com scheduler, we receive the name, email address, and any notes you provide. If you email us, we receive the contents of that email and your email address. That's it — we do not run lead capture forms, gated downloads, or chat widgets.</p>
+
+    <h3>Information collected automatically</h3>
+    <p>Like most websites, our hosting provider records standard server logs when you visit a page. These logs typically include your IP address, the browser and device type you're using, the page you requested, the time of the request, and the referring page if any. We use this information to keep the site running and to investigate problems if something breaks.</p>
+
+    <h3>Information from cookies and similar technologies</h3>
+    <p>This site uses a small number of cookies and tracking technologies, all listed below in §05. We do not use advertising trackers, behavioral profiling, or social media pixels.</p>
+
+    <h2><span class="num">03</span>How we use information</h2>
+    <ul>
+      <li>To respond to your inquiries and schedule conversations with you</li>
+      <li>To send you follow-up communications related to a discovery call you booked or a conversation you initiated</li>
+      <li>To understand which pages on our site are most useful, so we can improve them</li>
+      <li>To detect, prevent, and respond to security incidents or abuse</li>
+      <li>To comply with legal obligations</li>
+    </ul>
+    <p>We do not use your information to train AI models, build advertising audiences, or for any purpose unrelated to the conversation you started with us.</p>
+
+    <h2><span class="num">04</span>Who we share information with</h2>
+    <p>We do not sell, rent, or trade your information. We share it only with the third-party tools we use to run our business, and only to the extent needed to make those tools work:</p>
+    <ul>
+      <li><strong>Cal.com</strong> — when you book a call, your booking details are stored in Cal.com. See <a href="https://cal.com/privacy" target="_blank" rel="noopener">cal.com/privacy</a></li>
+      <li><strong>Our email provider (Google Workspace)</strong> — emails you send us are received and stored through Google Workspace</li>
+      <li><strong>Our website host</strong> — the company that serves this site processes server logs as described above</li>
+    </ul>
+    <p>We may also share information when required by law (such as a valid subpoena), to protect our rights or the rights of others, or in connection with a sale or transfer of our business — in which case we would notify you in advance through the email address on this site.</p>
+
+    <h2><span class="num">05</span>Cookies and tracking</h2>
+    <p>This site uses the following:</p>
+    <ul>
+      <li><strong>Essential cookies</strong> — small files set by our hosting platform that are needed for the site to load and function</li>
+      <li><strong>Cal.com cookies</strong> — set when you interact with the booking widget, to remember your scheduling state</li>
+      <li><strong>Google Fonts</strong> — fonts are loaded from Google's CDN, which involves a request from your browser to fonts.googleapis.com</li>
+    </ul>
+    <p>You can disable cookies through your browser settings. The booking widget and some site features may not work fully if you do.</p>
+
+    <h2><span class="num">06</span>How long we keep information</h2>
+    <p>We keep emails and call notes for as long as the relationship with you is active, plus a reasonable period afterwards (generally up to three years) for our records and to follow up on prior conversations. Server logs are kept for a short rolling period set by our hosting provider, typically 30 to 90 days. You can ask us to delete your information at any time using the contact details below.</p>
+
+    <h2><span class="num">07</span>Your rights</h2>
+    <p>Depending on where you live, you may have the right to:</p>
+    <ul>
+      <li>Ask what information we have about you</li>
+      <li>Request a copy of that information</li>
+      <li>Ask us to correct information that's inaccurate</li>
+      <li>Ask us to delete your information</li>
+      <li>Opt out of certain uses of your information</li>
+    </ul>
+    <p>If you live in California, the European Union, the United Kingdom, or another jurisdiction with comparable privacy laws (such as the CCPA, GDPR, or UK GDPR), these rights apply to you. To exercise any of them, email us at <a href="mailto:hello@compounding-systems.com">hello@compounding-systems.com</a> with the request. We'll respond within 30 days.</p>
+    <p>We do not discriminate against anyone for exercising these rights.</p>
+
+    <h2><span class="num">08</span>Security</h2>
+    <p>We use reasonable technical and organizational measures to protect your information, including encrypted connections (HTTPS) for the website and access controls on the tools we use. No method of transmission over the internet is completely secure, however, so we cannot guarantee absolute security.</p>
+
+    <h2><span class="num">09</span>Children</h2>
+    <p>This site is intended for business audiences. We do not knowingly collect information from anyone under 16. If you believe a child has provided us with personal information, contact us and we will delete it.</p>
+
+    <h2><span class="num">10</span>Changes to this policy</h2>
+    <p>We may update this policy from time to time. When we do, we'll change the "Last updated" date at the top. Material changes will be reflected here with a clear note about what changed. If you have an active conversation with us when something material changes, we'll let you know directly.</p>
+
+    <h2><span class="num">11</span>Contact</h2>
+    <p>Questions about this policy, requests about your information, or anything else privacy-related: <a href="mailto:hello@compounding-systems.com">hello@compounding-systems.com</a>.</p>
+    <p>Compounding Systems<br>
+    109 N. 12th Street, 9th Floor<br>
+    Brooklyn, NY 11249</p>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Compounding <em>Systems</em></div>
+    <div class="footer-meta">
+      <div>© 2026 Compounding Systems · All rights reserved</div>
+      <div>109 N. 12th Street, 9th Floor · Brooklyn, NY 11249</div>
+      <div><a href="/">Home</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
