@@ -6,9 +6,10 @@
 <title>Compound AI – Automation that compounds for SMBs</title>
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
+<link rel="alternate icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2">
+<link rel="shortcut icon" href="/favicon-32.png?v=2">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png?v=2">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -576,6 +577,43 @@
     color: var(--ink-soft);
   }
 
+
+  /* CASE GALLERY (3-up beneath each case) */
+  .case-gallery {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .case-gallery-item {
+    aspect-ratio: 4/3;
+    background: var(--bg-deep);
+    border: 1px solid var(--rule-soft);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .case-gallery-item svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  .case-gallery-caption {
+    position: absolute;
+    bottom: 12px;
+    left: 16px;
+    right: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
   /* ============ FOUNDERS ============ */
   .founders {
     display: grid;
@@ -957,12 +995,12 @@
       <div class="savings-grid">
         <div class="savings-range">
           <div class="savings-high">
-            <span class="savings-currency">$</span><span class="savings-num">2.5M+</span>
+            <span class="savings-currency">+</span><span class="savings-num">32%</span>
           </div>
         </div>
         <div class="savings-copy">
-          <p class="savings-headline">Most recent voice AI vertical &mdash; <em>FlipCX healthcare</em>. Built and led the product line, six-person team, multi-client portfolio.</p>
-          <p class="savings-sub">Sector: Healthcare SaaS &middot; Status: Scaled to $2.5M+ ARR.</p>
+          <p class="savings-headline">Lift in <em>appointment-driven revenue</em> after we deployed voice AI on an urgent care&apos;s phone line.</p>
+          <p class="savings-sub">Built on the FlipCX product line we scaled to $2.5M+ ARR.</p>
         </div>
       </div>
     </div>
@@ -1016,63 +1054,251 @@
       <div></div>
     </div>
 
-    <div class="case">
+    <div class="case" id="case-upper-deck">
       <div class="case-meta">
         <div><strong>Sector</strong><br>Sports &amp; Recreation</div>
         <div><strong>Engagement</strong><br>Voice AI booking system</div>
         <div><strong>Stack</strong><br>Twilio · Deepgram · OpenAI</div>
         <div><strong>Status</strong><br>Live in production</div>
-        <div class="case-image">
-          <img src="https://images.unsplash.com/photo-1516731415730-0c607149933a?w=600&q=80" alt="Baseball facility" />
-        </div>
       </div>
       <div>
-        <h3>A baseball facility took 40% of its bookings on the phone. We built the operator that answers it.</h3>
-        <p class="case-body">Upper Deck Baseball was losing bookings to voicemail every evening. We deployed a voice AI agent on their main line that handles availability checks, books cages, takes payment, and routes anything complex to the owner. Deployed in six weeks on their existing phone number.</p>
+        <h3>Recovered the 40% of bookings that were going to voicemail.</h3>
+        <p class="case-body">Upper Deck Baseball was losing nearly half of its inbound bookings to voicemail every evening. We deployed a voice AI agent on their main line that handles availability checks, books cages, takes payment, and routes anything complex to the owner. Live on their existing phone number in six weeks &mdash; every call now answered, every bookable slot now bookable.</p>
         <div class="case-result">
-          <div class="case-result-item">
-            <div class="num">24/7</div>
-            <div class="lbl">Booking availability</div>
-          </div>
-          <div class="case-result-item">
-            <div class="num">~30s</div>
-            <div class="lbl">Average call resolution</div>
-          </div>
-          <div class="case-result-item">
-            <div class="num">0</div>
-            <div class="lbl">Voicemails missed</div>
-          </div>
+          <div class="case-result-item"><div class="num">+40%</div><div class="lbl">Bookings recovered</div></div>
+          <div class="case-result-item"><div class="num">24/7</div><div class="lbl">Booking availability</div></div>
+          <div class="case-result-item"><div class="num">0</div><div class="lbl">Voicemails missed</div></div>
         </div>
+      </div>
+      <div class="case-gallery">
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <rect width="400" height="300" fill="#1a1a1a"/>
+      <text x="32" y="48" font-family="JetBrains Mono, monospace" font-size="11" letter-spacing="1.5" fill="#b8431a" opacity="0.8">▸ INCOMING CALL · 7:42 PM</text>
+      <line x1="32" y1="64" x2="368" y2="64" stroke="#fbf9f4" stroke-opacity="0.1" stroke-width="1"/>
+      <text x="32" y="100" font-family="Fraunces, Georgia, serif" font-size="22" fill="#fbf9f4">+1 (646) 555-0173</text>
+      <text x="32" y="124" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#fbf9f4" opacity="0.5">UNKNOWN CALLER</text>
+      <circle cx="200" cy="200" r="36" fill="none" stroke="#b8431a" stroke-width="1.5"/>
+      <circle cx="200" cy="200" r="48" fill="none" stroke="#b8431a" stroke-width="1" opacity="0.5"/>
+      <circle cx="200" cy="200" r="60" fill="none" stroke="#b8431a" stroke-width="1" opacity="0.25"/>
+      <path d="M186 192 L186 208 L186 200 Q186 188 200 188 Q214 188 214 200 L214 208" stroke="#b8431a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <rect x="180" y="200" width="40" height="14" rx="2" fill="#b8431a"/>
+      <text x="200" y="270" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#fbf9f4" opacity="0.5" text-anchor="middle">AGENT ANSWERING ▸</text>
+    </svg>
+    </div>
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <rect width="400" height="300" fill="#fbf9f4"/>
+      <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a" opacity="0.8">▸ TRANSCRIPT</text>
+      <line x1="24" y1="48" x2="376" y2="48" stroke="#1a1a1a" stroke-opacity="0.15"/>
+      <text x="24" y="78" font-family="JetBrains Mono, monospace" font-size="11" fill="#b8431a">▸ agent</text>
+      <text x="24" y="94" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a">Upper Deck, this is the booking line.</text>
+      <text x="24" y="124" font-family="JetBrains Mono, monospace" font-size="11" fill="#1a1a1a" opacity="0.5">caller</text>
+      <text x="24" y="140" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a" opacity="0.7">Looking for a cage Saturday around 3.</text>
+      <text x="24" y="170" font-family="JetBrains Mono, monospace" font-size="11" fill="#b8431a">▸ agent</text>
+      <text x="24" y="186" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a">Cage 2 is open at 3:15. One hour, $45?</text>
+      <text x="24" y="216" font-family="JetBrains Mono, monospace" font-size="11" fill="#1a1a1a" opacity="0.5">caller</text>
+      <text x="24" y="232" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a" opacity="0.7">Yes.</text>
+      <text x="24" y="262" font-family="JetBrains Mono, monospace" font-size="11" fill="#b8431a">▸ agent</text>
+      <text x="24" y="278" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a">Booked. Confirmation texted.</text>
+    </svg>
+    </div>
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <rect width="400" height="300" fill="#ebe6db"/>
+      <text x="32" y="40" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1a1a1a" opacity="0.5">BEFORE</text>
+      <text x="220" y="40" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a" opacity="0.8">AFTER</text>
+      <line x1="200" y1="32" x2="200" y2="268" stroke="#1a1a1a" stroke-opacity="0.15"/>
+      <text x="32" y="120" font-family="Fraunces, Georgia, serif" font-size="56" fill="#1a1a1a" font-weight="400" letter-spacing="-0.02em">40%</text>
+      <text x="32" y="148" font-family="Inter Tight, sans-serif" font-size="11" fill="#1a1a1a" opacity="0.6">of bookings going</text>
+      <text x="32" y="164" font-family="Inter Tight, sans-serif" font-size="11" fill="#1a1a1a" opacity="0.6">to voicemail</text>
+      <text x="220" y="120" font-family="Fraunces, Georgia, serif" font-size="56" fill="#b8431a" font-weight="400" letter-spacing="-0.02em">0%</text>
+      <text x="220" y="148" font-family="Inter Tight, sans-serif" font-size="11" fill="#1a1a1a" opacity="0.6">missed.</text>
+      <text x="220" y="164" font-family="Inter Tight, sans-serif" font-size="11" fill="#1a1a1a" opacity="0.6">24/7 coverage.</text>
+      <line x1="32" y1="220" x2="368" y2="220" stroke="#1a1a1a" stroke-opacity="0.15"/>
+      <text x="200" y="252" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#1a1a1a" opacity="0.6" text-anchor="middle">6 WEEKS · DEPLOYED</text>
+    </svg>
+    </div>
       </div>
     </div>
 
-    <div class="case">
+    <div class="case" id="case-flipcx">
       <div class="case-meta">
-        <div><strong>Sector</strong><br>Healthcare SaaS</div>
-        <div><strong>Engagement</strong><br>Voice AI for clinical workflows</div>
-        <div><strong>Stack</strong><br>Custom integrations</div>
-        <div><strong>Status</strong><br>Scaled to $2.5M+ ARR</div>
-        <div class="case-image">
-          <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80" alt="Healthcare clinical setting" />
-        </div>
+        <div><strong>Sector</strong><br>Urgent Care · Healthcare</div>
+        <div><strong>Engagement</strong><br>Voice AI for inbound &amp; outbound calls</div>
+        <div><strong>Stack</strong><br>Custom integrations · HIPAA-scoped</div>
+        <div><strong>Status</strong><br>Live in production</div>
       </div>
       <div>
-        <h3>Took a healthcare voice AI vertical from idea to $2.5M+ in ARR.</h3>
-        <p class="case-body">Built and led the voice AI product line at FlipCX for the healthcare market, taking it from zero to $2.5M+ in ARR while managing a team of six and a portfolio of clinical clients.</p>
+        <h3>Cut missed calls 70% and lifted appointment revenue 32% for urgent care clinics.</h3>
+        <p class="case-body">Urgent care clinics were losing patients to voicemail and writing off collections because no one had time for the follow-up calls. We deployed a voice AI system that answers every inbound call &mdash; books visits, verifies insurance, takes payment &mdash; and runs outbound calls to chase outstanding balances, doubling what the clinic collects per cycle. Built on the FlipCX product line, which we scaled to $2.5M+ ARR.</p>
         <div class="case-result">
-          <div class="case-result-item">
-            <div class="num">0 → $2.5M+</div>
-            <div class="lbl">ARR built from scratch</div>
-          </div>
-          <div class="case-result-item">
-            <div class="num">6</div>
-            <div class="lbl">Team led</div>
-          </div>
-          <div class="case-result-item">
-            <div class="num">Multi-client</div>
-            <div class="lbl">Portfolio managed</div>
-          </div>
+          <div class="case-result-item"><div class="num">&minus;70%</div><div class="lbl">Missed calls</div></div>
+          <div class="case-result-item"><div class="num">+32%</div><div class="lbl">Appointment revenue</div></div>
+          <div class="case-result-item"><div class="num">2&times;</div><div class="lbl">Collections per cycle</div></div>
         </div>
+      </div>
+      <div class="case-gallery">
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="300" fill="#ebe6db"/>
+        <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a" opacity="0.8">▸ OUTCOMES · 90 DAYS</text>
+        <line x1="24" y1="48" x2="376" y2="48" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <line x1="148" y1="68" x2="148" y2="248" stroke="#1a1a1a" stroke-opacity="0.12"/>
+        <line x1="272" y1="68" x2="272" y2="248" stroke="#1a1a1a" stroke-opacity="0.12"/>
+        <text x="86" y="92" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1" fill="#1a1a1a" opacity="0.5" text-anchor="middle">MISSED CALLS</text>
+        <text x="86" y="146" font-family="Fraunces, Georgia, serif" font-size="42" fill="#b8431a" font-weight="400" letter-spacing="-0.02em" text-anchor="middle">−70%</text>
+        <text x="86" y="180" font-family="Inter Tight, sans-serif" font-size="10" fill="#1a1a1a" opacity="0.6" text-anchor="middle">vs. baseline</text>
+        <text x="210" y="92" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1" fill="#1a1a1a" opacity="0.5" text-anchor="middle">APPT REVENUE</text>
+        <text x="210" y="146" font-family="Fraunces, Georgia, serif" font-size="42" fill="#b8431a" font-weight="400" letter-spacing="-0.02em" text-anchor="middle">+32%</text>
+        <text x="210" y="180" font-family="Inter Tight, sans-serif" font-size="10" fill="#1a1a1a" opacity="0.6" text-anchor="middle">monthly lift</text>
+        <text x="334" y="92" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1" fill="#1a1a1a" opacity="0.5" text-anchor="middle">COLLECTIONS</text>
+        <text x="334" y="146" font-family="Fraunces, Georgia, serif" font-size="42" fill="#b8431a" font-weight="400" letter-spacing="-0.02em" text-anchor="middle">2×</text>
+        <text x="334" y="180" font-family="Inter Tight, sans-serif" font-size="10" fill="#1a1a1a" opacity="0.6" text-anchor="middle">per cycle</text>
+        <line x1="24" y1="248" x2="376" y2="248" stroke="#1a1a1a" stroke-opacity="0.4"/>
+        <text x="200" y="276" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1a1a1a" opacity="0.6" text-anchor="middle">URGENT CARE · VOICE AI · LIVE</text>
+      </svg>
+      </div>
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="300" fill="#fbf9f4"/>
+        <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a" opacity="0.8">▸ INBOUND · CLINICAL INTAKE</text>
+        <line x1="24" y1="48" x2="376" y2="48" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <text x="24" y="76" font-family="JetBrains Mono, monospace" font-size="11" fill="#1a1a1a" opacity="0.5">patient</text>
+        <text x="24" y="92" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a" opacity="0.7">I think I sprained my ankle.</text>
+        <text x="24" y="120" font-family="JetBrains Mono, monospace" font-size="11" fill="#b8431a">▸ agent</text>
+        <text x="24" y="136" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a">Got it. Earliest opening is 2:15 today.</text>
+        <text x="24" y="152" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a">$185 self-pay, or I can verify insurance.</text>
+        <text x="24" y="180" font-family="JetBrains Mono, monospace" font-size="11" fill="#1a1a1a" opacity="0.5">patient</text>
+        <text x="24" y="196" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a" opacity="0.7">Self-pay is fine.</text>
+        <text x="24" y="224" font-family="JetBrains Mono, monospace" font-size="11" fill="#b8431a">▸ agent</text>
+        <text x="24" y="240" font-family="Inter Tight, sans-serif" font-size="12" fill="#1a1a1a">Booked. Confirmation texted.</text>
+        <line x1="24" y1="258" x2="376" y2="258" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <text x="24" y="278" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="#1a1a1a" opacity="0.5">CALL DURATION</text>
+        <text x="376" y="278" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="#b8431a" text-anchor="end">42s · BOOKED</text>
+      </svg>
+      </div>
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="300" fill="#1a1a1a"/>
+        <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a">▸ OUTBOUND · COLLECTIONS CYCLE</text>
+        <line x1="24" y1="48" x2="376" y2="48" stroke="#fbf9f4" stroke-opacity="0.1"/>
+        <rect x="32" y="76" width="336" height="32" fill="none" stroke="#fbf9f4" stroke-opacity="0.4"/>
+        <text x="48" y="96" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbf9f4">OUTSTANDING BALANCES QUEUED</text>
+        <text x="352" y="96" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbf9f4" opacity="0.6" text-anchor="end">142</text>
+        <line x1="200" y1="108" x2="200" y2="128" stroke="#fbf9f4" stroke-opacity="0.4" stroke-dasharray="3 3"/>
+        <rect x="32" y="128" width="336" height="32" fill="#b8431a" opacity="0.15" stroke="#b8431a" stroke-width="1"/>
+        <text x="48" y="148" font-family="JetBrains Mono, monospace" font-size="10" fill="#b8431a">VOICE AGENT DIALS &amp; NEGOTIATES</text>
+        <text x="352" y="148" font-family="JetBrains Mono, monospace" font-size="10" fill="#b8431a" text-anchor="end">24/7</text>
+        <line x1="200" y1="160" x2="200" y2="180" stroke="#b8431a" stroke-dasharray="3 3"/>
+        <rect x="32" y="180" width="336" height="32" fill="none" stroke="#fbf9f4" stroke-opacity="0.4"/>
+        <text x="48" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbf9f4">PAYMENT CAPTURED</text>
+        <text x="352" y="200" font-family="JetBrains Mono, monospace" font-size="10" fill="#fbf9f4" opacity="0.6" text-anchor="end">$ ▸ CLINIC</text>
+        <line x1="24" y1="232" x2="376" y2="232" stroke="#fbf9f4" stroke-opacity="0.2"/>
+        <text x="32" y="262" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" fill="#fbf9f4" opacity="0.5">VS. MANUAL BILLING TEAM</text>
+        <text x="32" y="282" font-family="Fraunces, Georgia, serif" font-size="22" fill="#b8431a" font-weight="400">2× collected</text>
+        <text x="160" y="282" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#fbf9f4" opacity="0.6">PER CYCLE</text>
+      </svg>
+      </div>
+      </div>
+    </div>
+
+    <div class="case" id="case-pointr">
+      <div class="case-meta">
+        <div><strong>Sector</strong><br>Smart buildings · Enterprise</div>
+        <div><strong>Engagement</strong><br>0 → 1 AI product &amp; delivery</div>
+        <div><strong>Stack</strong><br>AI mapping · Indoor positioning · Wayfinding</div>
+        <div><strong>Status</strong><br>Live across Fortune 100</div>
+      </div>
+      <div>
+        <h3>Shipped the AI mapping engine that powers Fortune 100 real estate &mdash; saving LinkedIn $2.6M and running across 500M+ sq ft.</h3>
+        <p class="case-body">Shipped an AI mapping engine that turns building floor plans into navigable indoor maps in minutes, paired with hardware-free indoor positioning that works on existing wifi. Pointr now runs the product across 500M+ square feet of Fortune 100 real estate &mdash; driving $2.6M in savings at LinkedIn through smarter office utilization, powering wayfinding across Home Depot&rsquo;s 2,300 stores, UCHealth&rsquo;s 60-floor hospital campus through Epic MyChart, and Siemens building digitization through Building X.</p>
+        <div class="case-result">
+          <div class="case-result-item"><div class="num">$2.6M</div><div class="lbl">Saved at LinkedIn</div></div>
+          <div class="case-result-item"><div class="num">500M+</div><div class="lbl">Sq ft mapped</div></div>
+          <div class="case-result-item"><div class="num">F100</div><div class="lbl">Customer roster</div></div>
+        </div>
+      </div>
+      <div class="case-gallery">
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="300" fill="#fbf9f4"/>
+        <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a" opacity="0.8">▸ DEPLOYED ACROSS</text>
+        <line x1="24" y1="48" x2="376" y2="48" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <text x="24" y="78" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#1a1a1a" letter-spacing="-0.01em">LinkedIn</text>
+        <text x="376" y="78" font-family="JetBrains Mono, monospace" font-size="10" fill="#b8431a" text-anchor="end">$2.6M SAVED</text>
+        <line x1="24" y1="92" x2="376" y2="92" stroke="#1a1a1a" stroke-opacity="0.1"/>
+        <text x="24" y="118" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#1a1a1a" letter-spacing="-0.01em">Home Depot</text>
+        <text x="376" y="118" font-family="JetBrains Mono, monospace" font-size="10" fill="#1a1a1a" opacity="0.5" text-anchor="end">2,300 STORES</text>
+        <line x1="24" y1="132" x2="376" y2="132" stroke="#1a1a1a" stroke-opacity="0.1"/>
+        <text x="24" y="158" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#1a1a1a" letter-spacing="-0.01em">UCHealth</text>
+        <text x="376" y="158" font-family="JetBrains Mono, monospace" font-size="10" fill="#1a1a1a" opacity="0.5" text-anchor="end">60-FLOOR CAMPUS</text>
+        <line x1="24" y1="172" x2="376" y2="172" stroke="#1a1a1a" stroke-opacity="0.1"/>
+        <text x="24" y="198" font-family="Fraunces, Georgia, serif" font-size="20" font-weight="400" fill="#1a1a1a" letter-spacing="-0.01em">Siemens</text>
+        <text x="376" y="198" font-family="JetBrains Mono, monospace" font-size="10" fill="#1a1a1a" opacity="0.5" text-anchor="end">BUILDING X</text>
+        <line x1="24" y1="212" x2="376" y2="212" stroke="#1a1a1a" stroke-opacity="0.1"/>
+        <text x="24" y="238" font-family="JetBrains Mono, monospace" font-size="11" fill="#1a1a1a" opacity="0.5">+ Microsoft · Cisco · KPMG · EY · Nike</text>
+        <line x1="24" y1="252" x2="376" y2="252" stroke="#1a1a1a" stroke-opacity="0.4"/>
+        <text x="24" y="280" font-family="Fraunces, Georgia, serif" font-size="22" fill="#b8431a" font-weight="400" letter-spacing="-0.02em">500M+</text>
+        <text x="120" y="280" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#1a1a1a" opacity="0.6">SQ FT · MAPPED</text>
+      </svg>
+      </div>
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="300" fill="#1a1a1a"/>
+        <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a">▸ STORE WAYFINDING · HOME DEPOT</text>
+        <line x1="24" y1="48" x2="376" y2="48" stroke="#fbf9f4" stroke-opacity="0.1"/>
+        <g stroke="#fbf9f4" stroke-opacity="0.25" fill="none" stroke-width="0.8">
+          <rect x="40" y="72" width="320" height="180"/>
+          <line x1="40" y1="120" x2="360" y2="120"/>
+          <line x1="40" y1="168" x2="360" y2="168"/>
+          <line x1="40" y1="216" x2="360" y2="216"/>
+          <line x1="120" y1="72" x2="120" y2="252"/>
+          <line x1="200" y1="72" x2="200" y2="252"/>
+          <line x1="280" y1="72" x2="280" y2="252"/>
+        </g>
+        <g font-family="JetBrains Mono, monospace" font-size="8" fill="#fbf9f4" opacity="0.4">
+          <text x="46" y="86">LUMBER</text>
+          <text x="126" y="86">HARDWARE</text>
+          <text x="206" y="86">PAINT</text>
+          <text x="286" y="86">GARDEN</text>
+          <text x="46" y="134">PLUMBING</text>
+          <text x="126" y="134">ELECTRIC</text>
+          <text x="206" y="134">TOOLS</text>
+          <text x="286" y="134">APPLIANCES</text>
+          <text x="46" y="182">FLOORING</text>
+          <text x="126" y="182">TILE</text>
+          <text x="206" y="182">DOORS</text>
+          <text x="286" y="182">CABINETS</text>
+          <text x="46" y="230">SEASONAL</text>
+          <text x="126" y="230">DECOR</text>
+          <text x="206" y="230">STORAGE</text>
+          <text x="286" y="230">CHECKOUT</text>
+        </g>
+        <path d="M 60 240 L 60 200 L 140 200 L 140 150 L 220 150" stroke="#b8431a" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="60" cy="240" r="4" fill="#b8431a"/>
+        <circle cx="220" cy="150" r="5" fill="#b8431a"/>
+        <circle cx="220" cy="150" r="10" fill="none" stroke="#b8431a" stroke-width="1" opacity="0.5"/>
+        <text x="200" y="280" font-family="JetBrains Mono, monospace" font-size="9" fill="#b8431a" letter-spacing="1.5" text-anchor="middle">▸ AI MAPSCALE · INDOOR NAVIGATION</text>
+      </svg>
+      </div>
+      <div class="case-gallery-item">
+      <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="300" fill="#ebe6db"/>
+        <text x="24" y="36" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1.5" fill="#b8431a" opacity="0.8">▸ WHY IT WORKS</text>
+        <line x1="24" y1="48" x2="376" y2="48" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <text x="24" y="80" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#1a1a1a" opacity="0.5">DEPLOYMENT TIME</text>
+        <text x="24" y="116" font-family="Fraunces, Georgia, serif" font-size="32" fill="#1a1a1a" font-weight="400" letter-spacing="-0.02em">Minutes</text>
+        <text x="180" y="116" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#1a1a1a" opacity="0.5">VS. WEEKS MANUAL</text>
+        <line x1="24" y1="136" x2="376" y2="136" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <text x="24" y="166" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#1a1a1a" opacity="0.5">INFRASTRUCTURE</text>
+        <text x="24" y="202" font-family="Fraunces, Georgia, serif" font-size="32" fill="#b8431a" font-weight="400" letter-spacing="-0.02em">Hardware-free</text>
+        <line x1="24" y1="222" x2="376" y2="222" stroke="#1a1a1a" stroke-opacity="0.15"/>
+        <text x="24" y="252" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#1a1a1a" opacity="0.5">WORKS WITH</text>
+        <text x="24" y="284" font-family="Fraunces, Georgia, serif" font-size="22" fill="#1a1a1a" font-weight="400">Existing wifi</text>
+        <text x="180" y="284" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="1" fill="#1a1a1a" opacity="0.5">+ APPS YOU ALREADY USE</text>
+      </svg>
+      </div>
       </div>
     </div>
 
