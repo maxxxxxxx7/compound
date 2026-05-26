@@ -664,6 +664,7 @@
   window.addEventListener('load', () => {
     img1 = document.querySelector('.hero-img-1');
     img2 = document.querySelector('.hero-img-2');
+    img3 = document.querySelector('.hero-img-3');
     setWrapHeight();
     heroTimer = setInterval(() => goTo((current + 1) % slides.length), 4500);
     setCycleHeight(); setInterval(cycleNext, 2200);
